@@ -1,0 +1,886 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <!-- Las 3 etiquetas meta arriba * deben * venir primero en la cabeza; Cualquier otro contenido principal debe venir * después de * estas etiquetas -->
+    <meta name="description" content="HTML">
+    <meta name="author" content="Javier Alonso">
+	<meta name="keywords" content="HTML">
+    <link rel="icon" href="favicon.ico">
+    <title>Lenguaje de marcas - HTML</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<!-- CSS Interno -->
+	<style>
+		.ejemplo{
+			background-color: #F0F0F0;
+			padding: 0.01em 16px;
+			margin: 20px 0;
+		}
+		
+		table.ejemplo  {
+			border: 1px solid black;
+		}
+		
+		th.ejemplo  {
+			border: 1px solid black;
+			padding: 10px;
+		}
+		
+		td.ejemplo  {
+			border: 1px solid black;
+			padding: 10px;
+		}
+		
+		p{
+			margin-bottom: 30px;
+		}
+
+		h3{
+			margin-bottom: 40px;
+		}
+		.footer {
+		  <!-- position: absolute;
+		  bottom:0; -->
+		  width: 100%;
+		  height: 60px;
+		  background-color: #F0F0F0;
+		}
+	</style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">HTML</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+		    <li><a href="index.html">Home</a></li>
+            <li><a href="autor.html">Autor</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+	<h1><u>Manual HTML</u></h1>
+	<hr>
+	<article>
+		<a name="navegacion"><h3>Navegación</h3></a>
+			<table class="table table-striped">
+			<thead> 
+			<tr> 
+			<th>Sección</th> 
+			<th>Descripción</th> 
+			<th></th>  
+			</tr> 
+			</thead> 
+			<tbody> 
+			<tr> 
+			<td><b>Introducción</b></td> 
+			<td>Qué es HTML, versiones</td> 
+			<td> <a href="#introduccion" class="btn btn-success">Leer</a> </td> 
+			</tr> 
+			<tr> 
+			<td><b>Estructura de la página</b></td>  
+			<td>Etiquetas HTML, estructura de la página</td> 
+			<td> <a href="#estructura" class="btn btn-success">Leer</a> </td> 
+			</tr> 
+			<tr> 
+			<td><b>Secciones</b></td> 
+			<td>Ejemplos de secciones introducidas en HTML5</td> 
+			<td> <a href="#secciones" class="btn btn-success">Leer</a> </td> 
+			</tr> 
+			<tr> 
+			<td><b>Elementos</b></td> 
+			<td>Ejemplos de elementos más populares</td> 
+			<td> <a href="#elementos" class="btn btn-success">Leer</a> </td> 
+			</tr> 
+			<tr> 
+			<td><b>Texto</b></td> 
+			<td>Ejemplos de etiquetas más populares para texto</td> 
+			<td> <a href="#texto" class="btn btn-success">Leer</a> </td> 
+			</tr> 
+			<tr> 
+			<td><b>Otros</b></td> 
+			<td>Estilos CSS, scripts...</td> 
+			<td> <a href="#otros" class="btn btn-success">Leer</a> </td> 
+			</tr> 
+			</tbody> 
+			</table>
+	</article>
+	<article>
+		<a name="introduccion"><h3>Introducción</h3></a>
+		<section>
+			<h4>HTML</h4>
+			<p>HTML (Hyper Text Markup Language) es el lenguaje de marcado estándar para crear páginas Web. Es un estándar que sirve de referencia del software que conecta con la elaboración de páginas web en sus diferentes versiones, define una estructura básica y un código (denominado código HTML) .<br>
+			Los elementos HTML son los bloques de construcción de las páginas HTML y están representados por etiquetas. Las etiquetas HTML marcan partes de contenido como "heading", "title", "body", etc.<br>
+			El propósito de un navegador web (Chrome, IE, Firefox, Safari) es leer documentos HTML y mostrarlos. Los navegadores no muestran las etiquetas HTML, sino que las utilizan para procesar el contenido de la página.
+			</p>
+			<p>HTML sigue mejorando y aparecen nuevas versiones:
+			<table class="table table-striped"> 
+			<thead> 
+			<tr> 
+			<th width="100px">Versión</th> 
+			<th>Año</th> 
+			<th>Detalles</th> 
+			</tr> 
+			</thead> 
+			<tbody> 
+			<tr> 
+			<th>HTML</th> 
+			<td>1991</td> 
+			<td>La primera propuesta oficial para convertir HTML en un estándar.</td> 
+			</tr> 
+			<tr> 
+			<th>HTML 2.0</th> 
+			<td>1995</td>
+			<td>La primera versión oficial de HTML el IETF publicó el estándar en septiembre de 1995.</td> 
+			</tr> 
+			<tr> 
+			<th>HTML 3.2</th> 
+			<td>1997</td> 
+			<td>Incorpora los applets de Java y texto alrededor de las imágenes.</td> 
+			</tr> 
+			<tr> 
+			<th>HTML 4.0</th> 
+			<td>1998</td> 
+			<td>Entre las novedades que presenta se encuentran las hojas de estilos CSS y la posibilidad de incluir pequeños programas en las páginas web.</td> 
+			</tr> 
+			<tr> 
+			<th>HTML 4.01</th> 
+			<td>1999</td> 
+			<td>Es la última especificación oficial de HTML. Es una actualización de la versión anterior. En ese momento el W3C detuvo la actividad de estandarización de HTML hasta 2007, momento en que se retoma debido a la fuerza de las empresas que forman el grupo  WHATWG y a la publicación de los borradores de HTML 5.0, que será la siguiente versión de este lenguaje.</td> 
+			</tr> 
+			<tr> 
+			<th>XHTML 1.0</th> 
+			<td>2000</td>
+			<td>Es una adaptación de HTML 4.01 al lenguaje XML, por lo que mantiene sus características, y añade algunas restricciones y elementos de XML.</td> 
+			</tr> 
+			<tr> 
+			<th>XHTML 1.1</th> 
+			<td>2000</td>
+			<td>Ha sido publicada en forma de borrador y pretende modularizar XHTML.</td> 
+			</tr> 
+			<tr> 
+			<th>XHTML 2.0</th> 
+			<td>2000</td>
+			<td>Presenta grandes novedades respecto de las anteriores versiones.</td> 
+			</tr> 		
+			<tr> 
+			<th>HTML5</th> 
+			<td>2014</td> 
+			<td>Especifica dos variantes de sintaxis para HTML: una clásica, HTML (text/html), conocida como HTML5, y una variante XHTML conocida como sintaxis XHTML5 que deberá servirse con sintaxis XML. Establece una serie de nuevos elementos y atributos.</td> 
+			</tr> 
+			</tbody> 
+			</table>
+			En mi manual voy a basarme sobretodo en la versión HTML5.
+			</p>
+		</section>
+		<a href="#navegacion" class="btn btn-danger">Volver</a>
+	</article>
+	<article>
+		<a name="estructura"><h3>Estructura de la página</h3></a>	
+			<section>
+			<h4>Etiquetas HTML</h4>
+			<p>Las etiquetas HTML son nombres de elementos rodeados por corchetes angulares. Normalmente vienen en parejas como <span style="color:purple">&lt;p&gt;</span> y <span style="color:purple">&lt; /p&gt;</span> y el contenido va entre ellos.<br>
+				La primera etiqueta de un par es la etiqueta de inicio, la segunda etiqueta es la etiqueta de fin.
+				Esta última se escribe como la etiqueta de inicio, pero con una barra diagonal insertada antes del nombre de la etiqueta.<br><br>
+				Todos los documentos HTML constan de elementos HTML anidados. Cuando se anidan etiquetas, se cierran las etiquetas en el orden opuesto al que las abrieron.<br>
+				Por ejemplo si se necesita una frase en negrita, agrega abrir y cerrar etiquetas en negrita antes y después del texto. Si se necesita que sea también cursiva, la etiqueta de apertura y cierre en cursiva se agrega antes y después del bloque de texto completo. Leyendo de izquierda a derecha, se abren las etiquetas: <span style="color:purple">i</span>, <span style="color:purple">b</span>.
+				<div class = "ejemplo">
+					<span style="color:purple"><span style="color:mediumblue">&lt;</span>i<span style="color:mediumblue">&gt;</span></span><span style="color:purple"><span style="color:mediumblue">&lt;</span>b<span style="color:mediumblue">&gt;</span></span>Una frase<span style="color:purple"><span style="color:mediumblue">&lt;</span>/b<span style="color:mediumblue">&gt;</span><span style="color:purple"><span style="color:mediumblue">&lt;</span>/i<span style="color:mediumblue">&gt;</span>
+				</div>
+			</p>
+			</section>
+			<section>
+			<h4>Etiquetas de comentario HTML</h4>
+			<p>Se puede agregar comentarios a su origen HTML utilizando la siguiente sintaxis: <span style="color:darkorange">  &lt;!-- Escriba sus comentarios aquí --&gt;</span><br>
+				Los comentarios no se muestran en el navegador, pero pueden ayudar a documentar el código fuente HTML.
+				La etiqueta de fin se escribe como la etiqueta de inicio, pero con una barra diagonal insertada antes del nombre de la etiqueta.
+			</p>
+			</section>
+			<section>
+			<h4>Estructura del documento</h4>
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>!DOCTYPE html<span style="color:mediumblue">&gt;</span><span style="color:darkorange">&emsp;&emsp;&lt;!-- Declaracción que define este documento como HTML --&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>html<span style="color:mediumblue">&gt;</span><span style="color:darkorange">&emsp;&emsp;&lt;!-- Inicio --&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>head<span style="color:mediumblue">&gt;</span><span style="color:darkorange">&emsp;&emsp;&lt;!-- Cabecera --&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>/head<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>body<span style="color:mediumblue">&gt;</span><span style="color:darkorange">&emsp;&emsp;&lt;!-- Cuerpo --&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>/body<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/html<span style="color:mediumblue">&gt;</span><span style="color:darkorange">&emsp;&emsp;&lt;!-- Fin --&gt;</span></span>
+			</div>
+			<p>
+				La declaración <span style="color:purple">&lt;!DOCTYPE&gt;</span> representa el tipo de documento y ayuda a los navegadores a mostrar páginas web correctamente. Solo debe aparecer una vez, en la parte superior de la página (antes de cualquier etiqueta HTML).<br>
+			</p>
+			
+			<h5><b>Etiqueta html</b></h5>
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>html lang="es"<span style="color:mediumblue">&gt;</span></span>
+			</div>
+			<p>
+				El documento HTML comienza con <span style="color:purple">&lt;html&gt;</span> y termina con <span style="color:purple">&lt;/ html&gt;</span>. 
+			    Es el elemento raíz de una página HTML.<br>El idioma del documento se puede declarar en esta etiqueta y se declara con el atributo <span style="color:purple">lang</span>.<br>
+			</p>
+			
+			<h5><b>Etiqueta head</b></h5>
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>head<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>meta charset="utf-8"<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>meta name="description" content="HTML"<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>meta name="author" content="Javier Alonso"<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>meta name="keywords" content="HTML"<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>link rel="icon" href="favicon.ico"<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>title<span style="color:mediumblue">&gt;</span></span>Lenguaje de marcas - HTML<span style="color:purple"><span style="color:mediumblue">&lt;</span>/title<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"<span style="color:mediumblue">&gt;</span></span><br> <!-- Bootstrap CSS -->
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>style<span style="color:mediumblue">&gt;</span></span><br><!-- CSS Interno -->
+				 <span style="color:purple">&nbsp;&nbsp;<span style="color:mediumblue"></span>h1{<span style="color:mediumblue"></span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:mediumblue"></span>margin-bottom: 30px;<span style="color:mediumblue"></span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;<span style="color:mediumblue"></span>}<span style="color:mediumblue"></span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/style<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/head<span style="color:mediumblue">&gt;</span></span>
+			</div>
+			<p>
+				El elemento <span style="color:purple">&lt;head&gt;</span> es un contenedor para metadatos. Los metadatos HTML son datos sobre el documento HTML y no se muestran.<br>
+				Los siguientes describen las etiquetas de metadatos: 
+			</p>
+			<ol type = "a">
+				<li>meta</li>
+				<li>title</li>
+				<li>link</li>
+				<li>style</li>
+				<li>script</li>
+				<li>base</li>
+			</ol>
+			<br>
+			<table class="table table-striped"> 
+			<thead> 
+			<tr> 
+			<th width="100px">Nombre</th> 
+			<th>Detalles</th> 
+			</tr> 
+			</thead> 
+			<tbody> 
+			<tr> 
+			<th>meta</th> 
+			<td>
+			El elemento meta se utiliza para especificar qué conjunto de caracteres se utiliza, de descripción de páginas, palabras clave, autor, y otros metadatos.
+			<ul style="list-style-type:circle">
+			  <li>La etiqueta meta charset se utiliza para visualizar una página HTML correctamente. Un navegador web debe conocer el conjunto de caracteres utilizado en la página. "UTF-8" (Unicode) se utiliza en HTML5 y tiene casi todos los caracteres y símbolos en el mundo.</li>
+			  <li>Se puede definir una descripción de una página web con <span style="color:blue">name="description"</span> en sección <span style="color:blue">content</span>.</li>
+			  <li>Se puede definir el autor de una página en <span style="color:blue">content</span> con <span style="color:blue">name="author"</span>.</li>
+			  <li>Definir palabras clave para motores de búsqueda en <span style="color:blue">content</span> con <span style="color:blue">name="keywords"</span>.</li>
+			</ul>  
+			</td> 
+			</tr> 
+			<tr> 
+			<th>title</th> 
+			<td>
+			La etiqueta title especifica un título para el documento.
+			</td> 
+			</tr> 
+			<tr> 
+			<th>link</th>  
+			<td>
+			El elemento link se utiliza para añadir un elemento externo.
+			<ul style="list-style-type:circle">
+			  <li>Para vincular a las hojas de estilo externas con rel="stylesheet" y href con enlace al fichero con estilo css. Es popular y muy rápido usar listas de estilos de código abierto (bootstrap) desde las páginas como por ejemplo <a href="https://www.bootstrapcdn.com/">bootstrapcdn.com</a></li>
+			  <li>Para mostrar también un icono, se utiliza link rel="icon" href="favicon.ico".</li>
+			</ul>  
+			</td> 
+			</tr> 
+			<tr> 
+			<th>style</th> 
+			<td>Define la información de estilo interno para un documento.</td> 
+			</tr> 
+			<tr> 
+			<th>script</th> 
+			<td>El elemento script se utiliza para definir archivos JavaScript del lado del cliente.</td> 
+			</tr> 
+			<tr> 
+			<th>base</th> 
+			<td>El elemento base especifica la dirección URL base y destino de base para todas las URLs relativas en una página.</td> 
+			</tr> 
+			</tbody> 
+			</table>
+
+			<br>
+			Gracias a title y link se puede ver el titulo de la pagina en un navegador como:<br><br>
+			<img src="title.png" alt="title" width="209" height="31"><br><br>
+		
+			<h5><b>Etiqueta body</b></h5>
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>body<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>h1<span style="color:mediumblue">&gt;</span></span>Encabezado<span style="color:purple"><span style="color:mediumblue">&lt;</span>/h1<span style="color:mediumblue">&gt;</span><span style="color:darkorange">&emsp;&emsp;&lt;!-- Define un encabezado grande --&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>p<span style="color:mediumblue">&gt;</span></span>Párrafo<span style="color:purple"><span style="color:mediumblue">&lt;</span>/p<span style="color:mediumblue">&gt;</span><span style="color:darkorange">&emsp;&emsp;&lt;!-- Define un párrafo --&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/body<span style="color:mediumblue">&gt;</span></span><br><span style="color:purple"><span style="color:mediumblue">&lt;</span>/html<span style="color:mediumblue">&gt;</span></span>
+			</div>
+			<p>
+				La parte visible del documento HTML está entre <span style="color:purple">&lt;body&gt;</span> y <span style="color:purple">&lt;/ body&gt;</span>. 
+				Contiene todo el contenido de un documento HTML, tales como texto, hipervínculos, imágenes, tablas, etc.
+			</p>
+			</section>
+	<a href="#navegacion" class="btn btn-danger">Volver</a>
+	</article>
+	<article>
+		<a name="secciones"><h3>Secciones</h3></a>
+		<p>HTML5 ofrece nuevos elementos semánticos para definir diferentes partes de una página web. Son los elementos semanticos que defienen claramente su contenido:</p>
+		<a href="http://www.w3schools.com/html/html5_semantic_elements.asp"><img src="secciones.gif"></a><br><br>
+			<section>
+			<h4>Article y section</h4>
+			<p>
+			La etiqueta <span style="color:purple">&lt;article&gt;</span> especifica contenido independiente y autónomo.
+			Un artículo debe tener sentido por sí mismo y debe ser posible distribuirlo independientemente del resto del sitio.
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>article<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>header<span style="color:mediumblue">&gt;</span></span>Encabezado<span style="color:purple"><span style="color:mediumblue">&lt;</span>/header<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>p<span style="color:mediumblue">&gt;</span></span>El texto del articulo<span style="color:purple"><span style="color:mediumblue">&lt;</span>/p<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/article<span style="color:mediumblue">&gt;</span></span><br> 
+			</div>
+			El elemento  <span style="color:purple">&lt;header&gt;</span> especifica un encabezado para un documento o sección y debe usarse como un contenedor para contenido introductorio.<br>
+			La etiqueta <span style="color:purple">&lt;section&gt;</span> define secciones de un documento, como capítulos, encabezados, pies de página o cualquier otra sección del documento.
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>section<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>h1<span style="color:mediumblue">&gt;</span></span>Título<span style="color:purple"><span style="color:mediumblue">&lt;</span>/h1<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>p<span style="color:mediumblue">&gt;</span></span>El texto del articulo<span style="color:purple"><span style="color:mediumblue">&lt;</span>/p<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/section<span style="color:mediumblue">&gt;</span></span><br> 
+			</div>
+			No hay consenso a la hora de  como anidar esos elementos. En Internet se pueden encontrar páginas HTML con elementos <span style="color:purple">&lt;section&gt;</span> que contienen elementos <span style="color:purple">&lt;article&gt;</span> y <span style="color:purple">&lt;article&gt;</span> que contienen elementos <span style="color:purple">&lt;section&gt;</span>.
+			Normalmente, esta es la forma más correcta:
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>article<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>section<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>/section<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>section<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>/section<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/article<span style="color:mediumblue">&gt;</span></span><br> 			 
+			</div>
+			...aunque esta es común también:
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>section<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>article<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>/article<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>article<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>/article<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/section<span style="color:mediumblue">&gt;</span></span><br> 			 
+			</div>
+			</p>
+			</section>
+			<section>
+			<h4>Footer</h4>
+			<p>
+			El elemento <span style="color:purple">&lt;footer&gt;</span> especifica un pie de página para un documento o sección. Un pie de página normalmente contiene al autor del documento, información sobre derechos de autor, enlaces a términos de uso, información de contacto, etc.
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>footer<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>p<span style="color:mediumblue">&gt;</span></span>Una información sobre el autor<span style="color:purple"><span style="color:mediumblue">&lt;</span>/p<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/footer<span style="color:mediumblue">&gt;</span></span><br> 			 
+			</div>
+			</p>
+			</section>
+			<section>
+			<h4>Nav</h4>
+			<p>
+			El elemento <span style="color:purple">&lt;nav&gt;</span> define un conjunto de enlaces de navegación.
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>footer<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>a href="http://www.google.com"<span style="color:mediumblue">&gt;</span></span>Google<span style="color:purple"><span style="color:mediumblue">&lt;</span>/a<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple">&nbsp;&nbsp;&nbsp;<span style="color:mediumblue">&lt;</span>a href="http://www.heraldo.es"<span style="color:mediumblue">&gt;</span></span>Heraldo<span style="color:purple"><span style="color:mediumblue">&lt;</span>/a<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/footer<span style="color:mediumblue">&gt;</span></span><br> 			 
+			</div>
+			</p>
+			</section>
+			<section>
+			<h4>Etiqueta &lt;div&gt;</h4>
+			<p>
+			La etiqueta <span style="color:purple">&lt;div&gt;</span> define una división o una sección en un documento HTML y se utiliza para agrupar elementos de bloque para darles formato con estilo. Es un ejemplo de elemento no semántico - no dice nada sobre su contenido.
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>div <span style="color:blue">style</span>="width: 800px; margin: 5px; color: blue; background-color: yellow; border: 1px solid black;" <span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>h2 <span style="color:mediumblue">&gt;</span></span>Elemento agrupado 1<span style="color:purple"><span style="color:mediumblue">&lt;</span>/h2<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>p<span style="color:mediumblue">&gt;</span></span>Elemento agrupado 2<span style="color:purple"><span style="color:mediumblue">&lt;</span>/p<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span>
+			</div>
+			En este ejemplo estilo <span style="color:blue">&lt;style&gt;</span> de etiqueta <span style="color:purple">&lt;div&gt;</span> define una anchura <span style="color:purple">width</span> en pixels, margen <span style="color:purple">margin</span> en pixels, color de la fuente <span style="color:purple">color</span>, color del fondo <span style="color:purple">background-color</span> y un borde <span style="color:purple">border</span>.
+			</p>
+			</section>
+	<a href="#navegacion" class="btn btn-danger">Volver</a>
+	</article>		
+	<article>	
+		<a name="elementos"><h3>Elementos</h3></a>
+		<section>
+			<h4>Encabezado</h4>
+			<p>
+			Los encabezados HTML se definen con las etiquetas <span style="color:purple">&lt;h1&gt;</span> a <span style="color:purple">&lt;h6&gt;</span>.<br>
+            <span style="color:purple">&lt;h1&gt;</span> define el encabezado más importante y <span style="color:purple">&lt;h6&gt;</span> define el encabezado menos importante.
+			</p>
+		</section>
+		<section>
+			<h4>Párrafos</h4>
+			<p>
+		    Los párrafos HTML se definen con la etiqueta <span style="color:purple">&lt;p&gt;</span>
+			<div class = "ejemplo">
+				<span style="color:purple"><span style="color:mediumblue">&lt;</span>p<span style="color:mediumblue">&gt;</span></span>Un párrafo<span style="color:purple"><span style="color:mediumblue">&lt;</span>/p<span style="color:mediumblue">&gt;</span>
+			</div>
+			</p>
+		</section>
+		<section>
+			<h4>Texto preformateado</h4>
+			<p>
+			Los párrafos HTML se definen con la etiqueta <span style="color:purple">&lt;pre&gt;</span>. Conserva los dos espacios y saltos de línea.
+			<pre>Puede ser muy útil
+						en algunos casos</pre>
+			<div class = "ejemplo">
+				<span style="color:purple"><span style="color:mediumblue">&lt;</span>pre<span style="color:mediumblue">&gt;</span></span>Un texto preformateado<span style="color:purple"><span style="color:mediumblue">&lt;</span>/pre<span style="color:mediumblue">&gt;</span>
+			</div>
+			</p>
+		</section>
+		<section>
+			<h4>Enlaces</h4>
+			<p>
+			Los enlaces HTML se definen con la etiqueta <span style="color:purple">&lt;a&gt;</span>.
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>a <span style="color:blue">href</span>="http://www.google.com" <span style="color:blue">title</span>="Un título de enlace"<span style="color:mediumblue">&gt;</span></span>Un enlace<span style="color:purple"><span style="color:mediumblue">&lt;</span>/a<span style="color:mediumblue">&gt;</span>
+			</div>
+			El destino del enlace se especifica en el atributo <span style="color:blue">href</span>.<br>
+			Se puede utilizar los atributos adicionales para proporcionar información sobre elementos HTML, como por ejemplo el título del enlace <span style="color:blue">title</span>.	
+			</p>
+			<h5><b>Tipos de enlaces</b></h5>
+			<p>
+			Hay dos tipos: absoluto y relativo.<br>
+			Un enlace absoluto contiene toda la dirección de la pagina como http://www.google.com.<br>
+			Un enlace relativo se divide en tres diferentes tipos:
+			<ol>
+			<li>Mismo directorio, por ejemplo href="index.html"</li>
+			<li>Subdirectorio, por ejemplo href="carpeta/autor.html"</li>
+			<li>Directorio anterior, por ejemplo href="../autor.html"</li>
+			</ol>
+			</p>
+			<h5><b>Punto de anclaje</b></h5>
+			<p>
+			Se puede crear una referencia a otro sitio en la misma página:
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>a <span style="color:blue">name</span>="nombreDeAnclaje" <span style="color:mediumblue">&gt;</span></span>Otro sitio<span style="color:purple"><span style="color:mediumblue">&lt;</span>/a<span style="color:mediumblue">&gt;</span>
+			</div>
+			Al pinchar en un enlace con atributo href el navegador muestra ese sitio en la pagina:
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>a <span style="color:blue">href</span>="#nombreDeAnclaje" <span style="color:mediumblue">&gt;</span></span>Otro sitio<span style="color:purple"><span style="color:mediumblue">&lt;</span>/a<span style="color:mediumblue">&gt;</span>
+			</div>
+			</p>
+		</section>
+		<section>
+			<h4>Imágenes</h4>
+			<p>
+			Las imágenes HTML se definen con la etiqueta <span style="color:purple">&lt;img&gt;</span>.
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>img <span style="color:blue">src</span>="imagen.jpg" <span style="color:blue">alt</span>="Un texto alternativo de imagen" <span style="color:blue">width</span>="250" <span style="color:blue">height</span>="100" <span style="color:mediumblue">&gt;</span></span>
+			</div>
+			La ruta del archivo fuente se acede con <span style="color:blue">src</span>.<br>
+			Se puede utilizar los atributos adicionales  como el texto alternativo <span style="color:blue">alt</span> que se muestra si no se puede mostrar la imagen, el ancho <span style="color:blue">width</span> y la altura <span style="color:blue">height</span>.
+			</p>
+		</section>
+		<section>
+			<h4>Etiqueta &lt;br&gt;</h4>
+			<p>
+			La etiqueta <span style="color:purple">&lt;br&gt;</span> inserta un salto de línea único. Es una etiqueta vacía que significa que no tiene etiqueta de final.<br>
+			En HTML, la etiqueta no tiene etiqueta de final. En XHTML (la versión más nueva) la etiqueta debe estar correctamente cerrada: <span style="color:purple">&lt;br /&gt;</span>.
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>br<span style="color:mediumblue">&gt;</span></span>
+			</div>
+			</p>
+		</section>
+		<section>
+			<h4>Etiqueta &lt;wbr&gt;</h4>
+			<p>
+			La etiqueta <span style="color:purple">&lt;wbr&gt;</span> (word break opportunity) especifica dónde en un texto que estaría bien añadir un salto de línea.<br>		
+			Por ejemplo cuando una palabra es demasiado larga para evitar situacción cuando el navegador va a romper sus líneas en el lugar equivocado, se puede utilizar wbr para signalizar donde dividir las palabras.<br>
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>p<span style="color:mediumblue">&gt;</span></span>El texto demasiado largo <span style="color:purple"><span style="color:mediumblue">&lt;</span>wbr<span style="color:mediumblue">&gt;</span></span> separado con wbr<span style="color:purple"><span style="color:mediumblue">&lt;</span>/p<span style="color:mediumblue">&gt;</span></span>
+			</div>
+			</p>
+		</section>
+		<section>
+			<h4>Etiqueta &lt;hr&gt;</h4>
+			<p>
+			La etiqueta <span style="color:purple">&lt;hr&gt;</span> se usa para para separar el contenido o definir un cambio temático en una página HTML.<br>
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>hr<span style="color:mediumblue">&gt;</span></span>
+			</div>
+			</p>
+		</section>
+		<section>
+			<h4>Listas</h4>
+			<h5><b>Listas desordenadas</b></h5>
+			<p>
+			Una lista sin orden comienza con la etiqueta <span style="color:purple">&lt;ul&gt;</span>. Cada elemento de la lista comienza con la etiqueta <span style="color:purple">&lt;li&gt;</span>.
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>ul style="list-style-type:circle"<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>li<span style="color:mediumblue">&gt;</span></span>Elemento1<span style="color:purple"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>li<span style="color:mediumblue">&gt;</span></span>Elemento2<span style="color:purple"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>li<span style="color:mediumblue">&gt;</span></span>Elemento3<span style="color:purple"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/ul<span style="color:mediumblue">&gt;</span></span><br> 
+			</div>
+			Los elementos de la lista se marcarán con balas (pequeños círculos negros) por defecto. Se puede cambiar el marcador con la propiedad <span style="color:blue">list-style-type</span>.	
+			</p>
+			<h5><b>Listas ordenadas</b></h5>
+			<p>
+			Una lista sin orden comienza con la etiqueta <span style="color:purple">&lt;ol&gt;</span>. Cada elemento de la lista comienza con la etiqueta <span style="color:purple">&lt;li&gt;</span>.
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>ol type="a"<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>li<span style="color:mediumblue">&gt;</span></span>Elemento1<span style="color:purple"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>li<span style="color:mediumblue">&gt;</span></span>Elemento2<span style="color:purple"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>li<span style="color:mediumblue">&gt;</span></span>Elemento3<span style="color:purple"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/ol<span style="color:mediumblue">&gt;</span></span><br> 
+			</div>
+			Los elementos de la lista se marcarán con números de forma predeterminada. Se puede cambiar el marcador con la propiedad <span style="color:blue">type</span>:	
+			<table class="table table-striped"> 
+			<thead> 
+			<tr> 
+			<th width="100px">Nombre</th> 
+			<th>Descripción</th> 
+			</tr> 
+			</thead> 
+			<tbody> 
+			<tr> 
+			<th>1</th> 
+			<td>
+			Los elementos de la lista se numerarán con números.
+			</td> 
+			</tr> 
+			<tr> 
+			<th>a</th> 
+			<td>
+			Los elementos de la lista se numerarán con letras minúsculas.
+			</td> 
+			</tr> 
+			<tr> 
+			<th>A</th>  
+			<td>
+			Los elementos de la lista se numerarán con letras mayúsculas. 
+			</td> 
+			</tr> 
+			<tr> 
+			<th>i</th> 
+			<td>Los elementos de la lista se numerarán con números romanos en minúsculas.</td> 
+			</tr> 
+			<tr> 
+			<th>I</th> 
+			<td>Los elementos de la lista se numerarán con números romanos en mayúsculas.</td> 
+			</tr>  
+			</tbody> 
+			</table>
+			Para obtener el orden descendente de la lista se utiliza <span style="color:blue">reversed</span>:
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>ol reversed<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>li<span style="color:mediumblue">&gt;</span></span>Elemento1<span style="color:purple"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>li<span style="color:mediumblue">&gt;</span></span>Elemento2<span style="color:purple"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>li<span style="color:mediumblue">&gt;</span></span>Elemento3<span style="color:purple"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/ol<span style="color:mediumblue">&gt;</span></span><br> 
+			</div>
+			Ejemplo:
+			<ol reversed>
+			<li>Elemento1</li>
+			<li>Elemento2</li>
+			<li>Elemento3</li>
+			</ol>
+			Para especificar el valor inicial para numerar los elementos individuales de la lista se utiliza <span style="color:blue">start</span>:
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>ol start="3"<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>li<span style="color:mediumblue">&gt;</span></span>Elemento1<span style="color:purple"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>li<span style="color:mediumblue">&gt;</span></span>Elemento2<span style="color:purple"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>li<span style="color:mediumblue">&gt;</span></span>Elemento3<span style="color:purple"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/ol<span style="color:mediumblue">&gt;</span></span><br> 
+			</div>
+			Ejemplo:
+			<ol start="3">
+			<li>Elemento1</li>
+			<li>Elemento2</li>
+			<li>Elemento3</li>
+			</ol>
+			</p>
+			<h5><b>Definition list</b></h5>
+			<p>
+			Es una lista de términos, con una descripción de cada término. Se comienza con la etiqueta <span style="color:purple">&lt;dl&gt;</span>. 
+			La etiqueta <span style="color:purple">&lt;dt&gt;</span> define el término (nombre) y la etiqueta <span style="color:purple">&lt;dd&gt;</span> describe cada término.
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>dl<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>dt<span style="color:mediumblue">&gt;</span></span>Definición1<span style="color:purple"><span style="color:mediumblue">&lt;</span>/dt<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>dd<span style="color:mediumblue">&gt;</span></span>- explanación1<span style="color:purple"><span style="color:mediumblue">&lt;</span>/dd<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>dt<span style="color:mediumblue">&gt;</span></span>Definición2<span style="color:purple"><span style="color:mediumblue">&lt;</span>/dt<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>dd<span style="color:mediumblue">&gt;</span></span>- explanación2<span style="color:purple"><span style="color:mediumblue">&lt;</span>/dd<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/dl<span style="color:mediumblue">&gt;</span></span><br> 
+			</div>
+			<dl>
+			Por ejemplo:<br>
+				<dt>ul</dt>
+				<dd>- unordered list</dd>
+				<dt>ol</dt>
+				<dd>- ordered list</dd>
+				<dt>dl</dt>
+				<dd>- definition list</dd>
+				</dl>
+			</p>
+		</section>
+		<section>
+			<h4>Tablas</h4>
+			<p>
+			Una tabla HTML se define con la etiqueta <span style="color:purple">&lt;table&gt;</span>.<br>
+			Las etiquetas de la tabla HTML son:
+			<table>
+			<tr>
+			<th style="width:100px;">Nombre</th>
+			<th>Descripcción</th>
+			</tr>
+			<tr>
+			<td>thead</th>
+			<td>Engrupa el contenido de la cabecera de una tabla.</td>
+			</tr>
+			<tr>
+			<td>tbody</th>
+			<td>Engrupa el contenido del cuerpo de una tabla.</td>
+			</tr>
+			<tr>
+			<td>tfoot</th>
+			<td>Engrupa el contenido del pie de una tabla.</td>
+			</tr>
+			<tr>
+			<td>caption</th>
+			<td>Define un título de la tabla.</td>
+			</tr>			
+			</table>
+			<br>
+			
+			Cada fila de la tabla se define con la etiqueta <span style="color:purple">&lt;tr&gt;</span>, un encabezado de tabla se define con la etiqueta <span style="color:purple">&lt;th&gt;</span> una celda de datos con la etiqueta <span style="color:purple">&lt;td&gt;</span>.
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>table style="border: 1px solid black;"<span style="color:mediumblue">&gt;</span><span style="color:darkorange">&emsp;&emsp;&lt;!-- El estilo define un borde de la tabla --&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>caption<span style="color:mediumblue">&gt;</span></span>El título de la tabla<span style="color:purple"><span style="color:mediumblue">&lt;</span>/caption<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>thead<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>tr<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>th<span style="color:mediumblue">&gt;</span></span>Título1<span style="color:purple"><span style="color:mediumblue">&lt;</span>/th<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>th<span style="color:mediumblue">&gt;</span></span>Título2<span style="color:purple"><span style="color:mediumblue">&lt;</span>/th<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>th<span style="color:mediumblue">&gt;</span></span>Título3<span style="color:purple"><span style="color:mediumblue">&lt;</span>/th<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/tr<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/thead<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>tbody<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>tr<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>td<span style="color:mediumblue">&gt;</span></span>Celda1<span style="color:purple"><span style="color:mediumblue">&lt;</span>/td<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>td<span style="color:mediumblue">&gt;</span></span>Celda2<span style="color:purple"><span style="color:mediumblue">&lt;</span>/td<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>td<span style="color:mediumblue">&gt;</span></span>Celda3<span style="color:purple"><span style="color:mediumblue">&lt;</span>/td<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/tr<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/tbody<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>tfoot<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>tr<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>td<span style="color:mediumblue">&gt;</span></span>Celda3<span style="color:purple"><span style="color:mediumblue">&lt;</span>/td<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>td<span style="color:mediumblue">&gt;</span></span>Celda4<span style="color:purple"><span style="color:mediumblue">&lt;</span>/td<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>td<span style="color:mediumblue">&gt;</span></span>Celda5<span style="color:purple"><span style="color:mediumblue">&lt;</span>/td<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/tr<span style="color:mediumblue">&gt;</span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/tfoot<span style="color:mediumblue">&gt;</span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/table<span style="color:mediumblue">&gt;</span>	 
+			</div>
+			<h5><b>Expansiones</b></h5>
+			<p>
+			Se puede hacer una expansión de una columna para hacer un espacio intencionado abarcando los siguientes espacios de columnas próximas.
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>table<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>tr<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>th<span style="color:mediumblue">&gt;</span></span>Título1<span style="color:purple"><span style="color:mediumblue">&lt;</span>/th<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>th colspan="2"<span style="color:mediumblue">&gt;</span></span>Título2<span style="color:purple"><span style="color:mediumblue">&lt;</span>/th<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/tr<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>tr<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>td<span style="color:mediumblue">&gt;</span></span>Celda1<span style="color:purple"><span style="color:mediumblue">&lt;</span>/td<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>td<span style="color:mediumblue">&gt;</span></span>Celda2<span style="color:purple"><span style="color:mediumblue">&lt;</span>/td<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>td<span style="color:mediumblue">&gt;</span></span>Celda3<span style="color:purple"><span style="color:mediumblue">&lt;</span>/td<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/tr<span style="color:mediumblue">&gt;</span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/table<span style="color:mediumblue">&gt;</span>	 
+			</div>
+			<table class="ejemplo">
+			<tr>
+			<th class="ejemplo">Título1</th>
+			<th colspan="2" class="ejemplo">Título2</th>
+			</tr>
+			<tr>
+			<td class="ejemplo">Celda1</td>
+			<td class="ejemplo">Celda2</td>
+			<td class="ejemplo">Celda3</td>
+			</tr>
+			</table>
+			También se puede hacer una expansión en una fila:
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>table<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>tr<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>th<span style="color:mediumblue">&gt;</span></span>Título1<span style="color:purple"><span style="color:mediumblue">&lt;</span>/th<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>td<span style="color:mediumblue">&gt;</span></span>Celda1<span style="color:purple"><span style="color:mediumblue">&lt;</span>/td<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/tr<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>tr<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>th rowspan="2"<span style="color:mediumblue">&gt;</span></span>Título2<span style="color:purple"><span style="color:mediumblue">&lt;</span>/th<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>td<span style="color:mediumblue">&gt;</span></span>Celda2<span style="color:purple"><span style="color:mediumblue">&lt;</span>/td<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/tr<span style="color:mediumblue">&gt;</span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>tr<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>td<span style="color:mediumblue">&gt;</span></span>Celda3<span style="color:purple"><span style="color:mediumblue">&lt;</span>/td<span style="color:mediumblue">&gt;</span></span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/tr<span style="color:mediumblue">&gt;</span><br>
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>/table<span style="color:mediumblue">&gt;</span>	 
+			</div>
+			<table class="ejemplo">
+			<tr>
+			<th class="ejemplo">Título1</th>
+			<td class="ejemplo">Celda1</td>
+			</tr>
+			<tr>
+			<th rowspan="2" class="ejemplo">Título2</th>
+			<td class="ejemplo">Celda2</td>
+			</tr>
+			<tr>
+			<td class="ejemplo">Celda3</td>
+			</tr>
+			</table>
+			</p>
+			</p>
+		</section>
+	<a href="#navegacion" class="btn btn-danger">Volver</a>
+	</article>
+	<article>
+		<a name="texto"><h3>Resaltado</h3></a>
+		<section>
+			<h4>i - Italic</h4>
+			<p>
+			<i>La <span style="color:purple">&lt;i&gt;</span> especifica el texto en cursiva.</i><br>
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>i<span style="color:mediumblue">&gt;</span></span>El texto en cursiva<span style="color:purple"><span style="color:mediumblue">&lt;</span>/i<span style="color:mediumblue">&gt;</span></span>
+			</div>
+			</p>
+		</section>
+		<section>
+			<h4>b - Bold</h4>
+			<p>
+			<b>La <span style="color:purple">&lt;b&gt;</span> especifica el texto en negrita.</b><br>
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>b<span style="color:mediumblue">&gt;</span></span>El texto en negrita<span style="color:purple"><span style="color:mediumblue">&lt;</span>/b<span style="color:mediumblue">&gt;</span></span>
+			</div>
+			</p>
+		</section>
+		<section>
+			<h4>u - Underlined</h4>
+			<p>
+			<u>La <span style="color:purple">&lt;u&gt;</span> especifica el texto subrayado.</u><br>
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>u<span style="color:mediumblue">&gt;</span></span>El texto subrayado<span style="color:purple"><span style="color:mediumblue">&lt;</span>/u<span style="color:mediumblue">&gt;</span></span>
+			</div>
+			</p>
+		</section>
+		<section>
+			<h4>em - Stress emphasis</h4>
+			<p>
+			<em>La etiqueta <span style="color:purple">&lt;em&gt;</span> es una etiqueta frase. Se hace hincapié en forma de texto.</em><br>
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>em<span style="color:mediumblue">&gt;</span></span>El texto con énfasis<span style="color:purple"><span style="color:mediumblue">&lt;</span>/em<span style="color:mediumblue">&gt;</span></span>
+			</div>
+			</p>
+		</section>
+		<section>
+			<h4>strong</h4>
+			<p>
+			<strong>La <span style="color:purple">&lt;strong&gt;</span> define el texto importante.</strong><br>
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>strong<span style="color:mediumblue">&gt;</span></span>El texto importante<span style="color:purple"><span style="color:mediumblue">&lt;</span>/strong<span style="color:mediumblue">&gt;</span></span>
+			</div>
+			</p>
+		</section>
+		<section>
+			<h4>small</h4>
+			<p>
+			<small>La <span style="color:purple">&lt;small&gt;</span> especifica el texto más pequeño.</small><br>
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>small<span style="color:mediumblue">&gt;</span></span>El texto más pequeño<span style="color:purple"><span style="color:mediumblue">&lt;</span>/small<span style="color:mediumblue">&gt;</span></span>
+			</div>
+			</p>
+		</section>	
+		<section>
+			<h4>s</h4>
+			<p>
+			<s>La <span style="color:purple">&lt;s&gt;</span> especifica el texto que ya no es correcto, exacto o pertinente.</s><br>
+			<div class = "ejemplo">
+				 <span style="color:purple"><span style="color:mediumblue">&lt;</span>s<span style="color:mediumblue">&gt;</span></span>El texto ya no correcto<span style="color:purple"><span style="color:mediumblue">&lt;</span>/s<span style="color:mediumblue">&gt;</span></span>
+			</div>
+			</p>
+		</section>
+	<a href="#navegacion" class="btn btn-danger">Volver</a>
+	</article>
+	<article>
+		<a name="otros"><h3>Otros</h3></a>
+		<section>
+			<h4>Editores</h4>
+			<p>Para escribir y editar la pagina web es suficiente utilizar por ejemplo solo un Bloc de notas en Windows. Se puede tambien utilizar editores más avanzados como:
+			<ul>
+			<li><a href="http://atom.io">Atom</a></li>
+			<li><a href="http://brackets.io">Brackets</a></li>
+			<li><a href="http://www.sublimetext.com">Sublime Text</a></li>
+			</ul>
+			</p>
+		</section>
+		<section>
+			<h4>CSS</h4>
+			<p>CSS (Cascading Style Sheets) es un lenguaje para describir páginas web de presentación (visualización). Fue diseñado por W3c en 1996.
+			</p>
+		</section>
+		<section>
+			<h4>JavaScript</h4>
+			<p>Javascript es un lenguaje de programación de secuencias de comandos creado por Netscape en 1995. Script puede proporcionar interactividad a través de la reacción en los eventos, la comprobación de la validación de los formularios, etc.</p>
+		</section>
+		<section>
+			<h4>Servidores</h4>
+			<p>Para obtener contenido y rellenar las paginas web con las informaciones desde la base de datos, se puede utilizar servidores sencillos a través del lenguajes como:
+			<table>
+			<tr>
+			<th style="width:100px;">Nombre</th>
+			<th>Descripcción</th>
+			</tr>
+			<tr>
+			<td>Python</th>
+			<td>
+			<ul>
+			<li>Python 2: python -m SimpleHTTPServer [port]</li>
+			<li>Python 3: python -m http.server [port]</li>
+			</ul>
+			</td>
+			</tr>
+			<tr>
+			<td>PHP</td>
+			<td>php -S localhost:[port]</td>
+			</tr>
+			<tr>
+			<td>Node.js</td>
+			<td><a href="https://www.browsersync.io/">Browsersync</a></td>
+			</tr>
+			</table>
+			</p>
+		</section>
+		<section>
+			<h4>GitHub</h4>
+			<p>Para subir una pagina web se puede utilizar <a href="https://git-scm.com/">GitHub</a>.
+			La documentación se puede leer <a href="http://librosweb.es/libro/pro_git/">aquí</a>.
+			</p>
+		</section>
+		<a href="#navegacion" class="btn btn-danger">Volver</a>
+	<article>
+    </div><!-- /.container -->
+	<footer class="footer">
+      <div class="container" style="width: auto; max-width: 680px; padding: 0 15px; text-align:center">
+        <p class="text-muted" style="margin: 20px 0;">  
+		Preparado por: <a href="mailto:someone@example.com">Javier Alonso</a>
+		Diseño: <a href="http://getbootstrap.com/getting-started/">getbootstrap.com</a>
+		</p>
+      </div>
+    </footer>
+	<script>
+	</script>
+  </body>
+</html>
